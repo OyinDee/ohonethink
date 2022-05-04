@@ -12,7 +12,7 @@ const closeNav=()=> {
 }
     return (
         <>
-        <header className="header-area header-sticky">
+        <header className="header-area header-sticky spaceBeforeAnything">
 
         <div className="row">
         
