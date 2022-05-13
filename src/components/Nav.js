@@ -1,19 +1,21 @@
-import React from 'react'
+import {useState} from 'react'
 import {Routes, Route, useNavigate , Router, Link} from "react-router-dom"
 import Login from './Login'
 export default function Nav() {
-    const openNav=()=> {
-        document.getElementById("mySidebar").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-}
+    const opened={width:"250px"}
+    const closed={width:"0px"}
+    const [style, setStyle] = useState(closed)
 
+const openNav=()=>{
+    setStyle(opened)
+}
 const closeNav=()=> {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+    setStyle(closed)
 }
 const navtolog =()=>{
     closeNav()
 }
+
     return (
         <>
         <header className="header-area header-sticky">
@@ -32,15 +34,15 @@ const navtolog =()=>{
             <li><a onClick={navtolog}><Link to="/login">Login</Link></a></li>
             
             </ul>
-                    <div id="mySidebar" className="sidebar">
-                    <a href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</a>
+                    <div id="mySidebar" className="sidebar" style={style}>
+                    <a className="closebtn" onClick={closeNav}>&times;</a>
         
                     <br/><br/>
                   <a href="#welcome" onClick={closeNav} className="active">Home</a>
                  <a href="#work-process" onClick={closeNav}>What we do</a>
                 <a href="#about" onClick={closeNav}>Acheivements</a>
             <a href="#contact-us" onClick={closeNav}>Contact Us</a>
-              <a href="#signup" onClick={closeNav}>Signup</a>   
+              <a href="#signup" onClinck={closeNav}>Signup</a>   
               <a onClick={navtolog}><Link to="/login">Login</Link></a>                     
             </div>
                     </nav>
