@@ -24,10 +24,8 @@ export default function Login(){
             const  userDetails={
                 username, password
             }
-            axios.post('https://o1think.herokuapp.com/login', userDetails).then((response,err) => {
-                localStorage.removeItem('token')               
+            axios.post('https://o1think.herokuapp.com/login', userDetails).then((response,err) => {              
                 console.log(response);
-                
                 setMessage(response.data.message)
                 if(response.data.message=="Your login is successful!"){
                     let token = response.data.token
@@ -41,7 +39,6 @@ export default function Login(){
                     }
                 }
                 else{
-
                     setMessage(response.data.message)
                     setLoading(false)                                                                 
                     setUsername('')
