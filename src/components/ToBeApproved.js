@@ -6,7 +6,7 @@ import AdminPost from './AdminPost'
 export default function ToBeApproved() {
     const [ideas, setIdeas]= useState([])
     useEffect(() => {
-        axios.get('http://localhost:1111/admincheck').then((response)=>{
+        axios.get('https://o1think.herokuapp.com/admincheck').then((response)=>{
             setIdeas(response.data)
         })
     }, [])
@@ -16,7 +16,7 @@ export default function ToBeApproved() {
         const id=val._id
         const postconfirm=window.confirm("This idea will be approved for the public to view. Okay?")
         if (postconfirm) {
-            axios.post('http://localhost:1111/approvePost', {id:id})
+            axios.post('https://o1think.herokuapp.com/approvePost', {id:id})
             window.location.reload()
         } else {
             alert("Oh.. Oh!")
@@ -28,7 +28,7 @@ export default function ToBeApproved() {
         const id=val._id
         const delconfirm=window.confirm("This post will be deleted permanently and the owner concerned will be alerted!")
         if (delconfirm) {
-            axios.post('http://localhost:1111/deletePost', {id:id})
+            axios.post('https://o1think.herokuapp.com/deletePost', {id:id})
             window.location.reload()
         } else {
             alert("Okay! Thanks for giving our users another chance.")

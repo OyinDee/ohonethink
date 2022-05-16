@@ -24,7 +24,7 @@ export default function Login(){
             const  userDetails={
                 username, password
             }
-            axios.post('http://localhost:1111/login', userDetails).then((response,err) => {
+            axios.post('https://o1think.herokuapp.com/login', userDetails).then((response,err) => {
                 localStorage.removeItem('token')               
                 console.log(response);
                 

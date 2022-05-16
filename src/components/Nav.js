@@ -42,7 +42,7 @@ const navtolog =()=>{
                  <a href="#work-process" onClick={closeNav}>What we do</a>
                 <a href="#about" onClick={closeNav}>Acheivements</a>
             <a href="#contact-us" onClick={closeNav}>Contact Us</a>
-              <a href="#signup" onClinck={closeNav}>Signup</a>   
+              <a href="#signup" onClick={closeNav}>Signup</a>   
               <a onClick={navtolog}><Link to="/login">Login</Link></a>                     
             </div>
                     </nav>

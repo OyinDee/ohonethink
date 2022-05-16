@@ -385,7 +385,7 @@ padding-top: 5vh;
   font-size: 39px;
   cursor: pointer;
   background-color: transparent;
-  color: purple;
+  color: rgb(82, 82, 82);
   padding-top: 10px;
   display: none;
   /* padding: 10px 10px */
@@ -402,6 +402,7 @@ padding-top: 5vh;
   padding: 20px;
 }
 @media only screen and (max-width: 300px) {
+
 .cardbox-approval {
   justify-content: center;
   padding-bottom: 3vh;
@@ -515,4 +516,12 @@ h2{
   .homeimg{
     display: none;
   }
+}
+@media only screen and (max-width: 280px){
+  .wfgf{
+   margin-top: 90vh;
+  }
+}
+.container py-5 .bg-dark{
+  background-color: purple;
 }

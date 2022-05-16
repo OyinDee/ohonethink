@@ -17,7 +17,7 @@ export default function Home() {
     const token=localStorage.token
     const username=localStorage.username
     useEffect(() => {
-        axios.get('http://localhost:1111/dashcheck', {
+        axios.get('https://o1think.herokuapp.com/dashcheck', {
             headers:{
                 'Authorization':`Bearer ${token}`,
                 'Content-Type':'application/json',

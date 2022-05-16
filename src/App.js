@@ -9,6 +9,7 @@ import {useSelector, useDispatch} from "react-redux"
 import {Routes, Route, useNavigate , Router, Link} from "react-router-dom"
 import axios from 'axios'
 import Home from './components/Home'
+import Chat from './components/Chatbox'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import IdeaContainer from './components/IdeaComponent'
@@ -26,6 +27,7 @@ function App() {
 <Route path="/signup" element={<Signup/>}/>
 <Route path="/login" element={<Login/>}/>
 <Route path="/admin/*" element={<TBA/>}/>
+<Route path="/chat" element={<Chat/>}/>
 
 </Routes>
 </>

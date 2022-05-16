@@ -17,7 +17,7 @@ export default function Signup() {
     const [loading, setLoading] = useState(false)              
     const token=localStorage.token
     useEffect(() => {
-        axios.get('http://localhost:1111/dashcheck', {
+        axios.get('https://o1think.herokuapp.com/dashcheck', {
             headers:{
                 'Authorization':`Bearer ${token}`,
                 'Content-Type':'application/json',
@@ -45,7 +45,7 @@ export default function Signup() {
             let userDetails={
                 fullname, email,username,password,zeroorone
             }
-            axios.post('https://ohonethink.herokuapp.com/signup', userDetails).then((response) => {
+            axios.post('https://o1think.herokuapp.com/signup', userDetails).then((response) => {
                 console.log(response);
                 if(response.data.text==="no"){
                 setMessage(response.data.message)
