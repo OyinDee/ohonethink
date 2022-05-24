@@ -9,6 +9,7 @@ import {useEffect, useState} from "react"
 import {Link, useNavigate} from "react-router-dom"
 import {changename} from '../actions/change'
 
+
 export default function Login(){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -28,12 +29,11 @@ export default function Login(){
                 console.log(response);
                 setMessage(response.data.message)
                 if(response.data.message=="Your login is successful!"){
-                    let token = response.data.token
-                    localStorage.token = token
+                    localStorage.token = response.data.token
                     dispatch(changename(userDetails.username))
                     localStorage.token=response.data.token
                     if (response.data.zeroorone==1) {
-                        navigate('/developers/home')                        
+                        navigate('/developers/home')                       
                     } else {
                         navigate('/thinkers/home')
                     }
@@ -43,7 +43,6 @@ export default function Login(){
                     setLoading(false)                                                                 
                     setUsername('')
                     setPassword('')
-                    localStorage.removeItem('token')
                 }
             }).catch((err)=>{
                 if (err.message==='timeout exceeded') {
@@ -97,18 +96,13 @@ export default function Login(){
     <div className="loadingornot">
      <fieldset>
 
-    {loading ? (
-        <div className="rotateBall"></div>
-      ) : (
-        <button id="form-submit" className="main-buttonn" onClick={tryToLogin}>Get started</button>
-      )}
+    {loading?(<div className="rotateBall"></div>):(<button id="form-submit" className="main-buttonn" onClick={tryToLogin}>Get started</button>)}
     </fieldset>
     </div>
     </div>
     </div>
     </div>
     </div>
-    
     </section>
             <Footer/>
         </>

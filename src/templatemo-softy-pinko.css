@@ -45,6 +45,10 @@ figure, header, nav, section, article, aside, footer, figcaption {
 a{
   cursor: pointer;
 }
+.contact-form #message{
+  height: 20vh;
+
+}
 .clearfix:after {
   content: ".";
   display: block;
@@ -369,6 +373,23 @@ button.main-buttonn {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
+button.main-buttonnn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 20px;
+  padding: 15px 0;
+  background-color: #8261ee;
+  text-transform: uppercase;
+  color: #fff;
+  width: 100%;
+  letter-spacing: 0.25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
 button.main-button {
   outline: none;
   border: none;
@@ -686,24 +707,6 @@ margin-top: -3px;
   }
 }
 
-@media only screen and (max-width: 480px){
-  button.main-buttonn {
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 13px;
-    border-radius: 20px;
-    margin-left: auto;
-    background-color: #8261ee;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 0.25px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-}
 /* 
 ---------------------------------------------
 welcome
@@ -715,7 +718,7 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./images/banner-bg.png);
+  background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
@@ -776,7 +779,7 @@ welcome
     transform: perspective(1px) translateY(-60%) !important;
   }
    .welcome-area .header-text h1 {
-    font-size: 22px;
+     font-size: 22px;
     line-height: 30px;
     margin-bottom: 15px;
   }
@@ -882,6 +885,7 @@ features
   letter-spacing: 0.5px;
   line-height: 25px;
   position: relative;
+            
   z-index: 2;
 }
 
@@ -928,7 +932,8 @@ parallax & home seperator
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background-image: url(./images/work-process-bg.png);
+  background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+  background-blend-mode: soft-light;
   z-index: 2;
   top: -20%;
   left: -20%;
@@ -1051,7 +1056,7 @@ parallax & home seperator
   width: 140%;
   height: 140%;
   opacity: .90;
-  background-image: url(./images/fun-facts-bg.png);
+  background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -1655,5 +1660,38 @@ preloader
   }
   100% {
     opacity: 0;
+  }
+}
+@media only screen and (max-width: 480px){
+
+  .mini:before {
+    content: '';
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    opacity: .95;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: soft-light;
+    z-index: 2;
+    top: -20%;
+    left: -20%;
+  }
+  button.main-buttonn {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 20px;
+    margin-left: auto;
+    background-color: #8261ee;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.25px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
   }
 }

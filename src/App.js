@@ -8,6 +8,7 @@ import { trackPromise } from 'react-promise-tracker';
 import {useSelector, useDispatch} from "react-redux"
 import {Routes, Route, useNavigate , Router, Link} from "react-router-dom"
 import axios from 'axios'
+import  {useEffect} from 'react'
 import Home from './components/Home'
 import Chat from './components/Chatbox'
 import Signup from './components/Signup'
@@ -17,6 +18,11 @@ import Homepage from './components/Homepage'
 import TBA from './components/ToBeApproved'
 import DevHome from './components/DevHome'
 function App() {
+  useEffect(() => {
+    axios.get('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900', (response)=>{
+      console.log(response)
+    })
+  }, [])
   const dispatch = useDispatch()
   return (
 <>

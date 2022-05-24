@@ -157,7 +157,7 @@ export default function Signup() {
 {loading ? (
     <div className="rotateBall"></div>
 ) : (
-    <button id="form-submit" className="main-buttonn" onClick={tryToSignup}>Get started</button>
+    <button id="form-submit" className="main-button" onClick={tryToSignup}>Get started</button>
 )}
 </fieldset>
 </div>

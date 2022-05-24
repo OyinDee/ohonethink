@@ -9,7 +9,7 @@ export default function All() {
                 <div className="row">
                     <div className="col-lg-3 col-md-6 col-sm-12">
                         <div className="count-item decoration-bottom">
-                            <strong>57</strong>
+                            <strong>18</strong>
                             <span>Ideas</span>
                         </div>
                     </div>
@@ -21,13 +21,13 @@ export default function All() {
                     </div>
                     <div className="col-lg-3 col-md-6 col-sm-12">
                         <div className="count-item decoration-bottom">
-                            <strong>5743</strong>
+                            <strong>5</strong>
                             <span>Developers</span>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 col-sm-12">
                         <div className="count-item">
-                            <strong>20</strong>
+                            <strong>2</strong>
                             <span>Thinkers</span>
                         </div>
                     </div>

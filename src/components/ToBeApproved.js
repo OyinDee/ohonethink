@@ -16,8 +16,7 @@ export default function ToBeApproved() {
         const id=val._id
         const postconfirm=window.confirm("This idea will be approved for the public to view. Okay?")
         if (postconfirm) {
-            axios.post('https://o1think.herokuapp.com/approvePost', {id:id})
-            window.location.reload()
+            axios.post('https://o1think.herokuapp.com/approvepost', {id:id})
         } else {
             alert("Oh.. Oh!")
         }
@@ -28,8 +27,7 @@ export default function ToBeApproved() {
         const id=val._id
         const delconfirm=window.confirm("This post will be deleted permanently and the owner concerned will be alerted!")
         if (delconfirm) {
-            axios.post('https://o1think.herokuapp.com/deletePost', {id:id})
-            window.location.reload()
+            axios.post('https://o1think.herokuapp.com/deletepost', {id:id})
         } else {
             alert("Okay! Thanks for giving our users another chance.")
         }
