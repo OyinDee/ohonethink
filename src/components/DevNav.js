@@ -43,7 +43,7 @@ const tryToLogout=()=>{
         <li><a>Help From Others</a></li>
         <li><a>Chats</a></li>        
         <li><a>My Profile</a></li>
-        <li><a>Logout</a></li>
+        <li><a onClick={tryToLogout}>Logout</a></li>
         
         </ul>
                 <div id="mySidebar" className="sidebar" style={style}>

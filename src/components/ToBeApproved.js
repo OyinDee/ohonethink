@@ -25,7 +25,12 @@ export default function ToBeApproved() {
     const remove=(val)=>{
         console.log(val._id) 
         const id=val._id
+        const delconfirm=window.confirm("This post will be deleted permanently and the owner concerned will be alerted!")
+        if (delconfirm) {
             axios.post('https://o1think.herokuapp.com/deletepost', {id:id})
+        } else {
+            alert("Okay! Thanks for giving our users another chance.")
+        }
     }
     const feedback=(val)=>{
         console.log(val._id)
