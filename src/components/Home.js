@@ -25,11 +25,21 @@ export default function Home() {
             }
         }
     ).then((response)=>{
-        if(localStorage.token&&response.data.message=='verification successful'){
-        navigate('/thinkers/home')
-            localStorage.username=response.data.username
-        }
-        else{
+        if(localStorage.token&&response.data.message==='verification successful'){
+            console.log(response)
+        localStorage.username=response.data.username                         
+            axios.post('https://o1think.herokuapp.com/getUserType', {username: response.data.username}).then((response)=>{
+                console.log(response.data)
+                if(response.data===1){
+                    navigate('/developers/home') 
+                }
+                else if(response.data===0){
+                    navigate('/thinkers/home') 
+                }    
+                else if(response.data==11){
+                    navigate('/onlyadmin')                 
+                }
+            })
         }
     }).catch((err)=>{
         console.log(err)

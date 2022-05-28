@@ -31,7 +31,7 @@ export default function Chatbox() {
             else if(response.data===0){
                 navigate('/chat') 
             }
-            else{
+            else if(response.data===11){
                 navigate('/onlyadmin')                 
             }
         })

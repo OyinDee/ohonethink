@@ -7,8 +7,6 @@ import {useNavigate} from "react-router-dom"
 import IdeaComponent from './IdeaComponent'
 import {changename} from '../actions/change'
 import Footer from '../components/Footer'
-
-
 export default function DevHome() {
     const [posts, setPosts]= useState([])
     const token = localStorage.token;
@@ -36,8 +34,8 @@ export default function DevHome() {
                 else if(response.data===0){
                     navigate('/thinkers/home') 
                 }    
-                else{
-                    navigate('/admin')                 
+                else if(response.data===11){
+                    navigate('/onlyadmin')                 
                 }
             })
         }

@@ -4,12 +4,53 @@ import IdeaComponent from './IdeaComponent'
 import AdminNav from './AdminNav'
 import AdminPost from './AdminPost'
 import Footer from '../components/Footer'
+import img from '../images/jujutsukaisen.jpg'
+import DevNav from './DevNav'
+import {useDispatch} from 'react-redux'
+import {useNavigate} from "react-router-dom"
+
 export default function ToBeApproved() {
     const [ideas, setIdeas]= useState([])
-    useEffect(() => {
-        axios.get('https://o1think.herokuapp.com/admincheck').then((response)=>{
-            setIdeas(response.data)
-        })
+    const navigate=useNavigate()
+    const dispatch=useDispatch()
+    const username=localStorage.username    
+    const token=localStorage.token
+        useEffect(() => {
+            axios.get('https://o1think.herokuapp.com/dashcheck', {
+                headers:{
+                    'Authorization':`Bearer ${token}`,
+                    'Content-Type':'application/json',
+                    'Accept':'application/json'
+                }
+            }
+        ).then((response)=>{
+            if(localStorage.token&&response.data.message==='verification successful'){
+                console.log(response)
+                localStorage.username=response.data.username                         
+                axios.post('https://o1think.herokuapp.com/getUserType', {username:response.data.username}).then((response)=>{
+                    console.log(response.data)
+                    if(response.data===1){
+                        navigate('/developers/home') 
+                    }
+                    else if(response.data===0){
+                        navigate('/thinkers/home') 
+                    }    
+                    else if(response.data===11){
+                        navigate('/onlyadmin')                 
+                    }
+                })
+            }
+            else{
+            console.log("it isnt")
+                navigate('/')
+            }
+        }).catch((err)=>{
+            console.log(err)
+        }).then(()=>{
+            axios.get('https://o1think.herokuapp.com/admincheck').then((response)=>{
+                setIdeas(response.data)
+            })
+        }, [username, dispatch, navigate, token])
     }, [])
 
     const approve=(val)=>{

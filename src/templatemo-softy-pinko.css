@@ -430,6 +430,7 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  
 }
 
 .header-area .main-nav {
@@ -596,6 +597,7 @@ margin-top: -3px;
 
 .header-area.header-sticky {
   min-height: 80px;
+  
 }
 .logotext{
   color: black;

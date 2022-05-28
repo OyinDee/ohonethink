@@ -34,8 +34,12 @@ export default function Login(){
                     localStorage.token=response.data.token
                     if (response.data.zeroorone==1) {
                         navigate('/developers/home')                       
-                    } else {
+                    }
+                    else if(response.data.zeroorone==0) {
                         navigate('/thinkers/home')
+                    }
+                    else if(response.data.zeroorone==11){
+                        navigate('/onlyadmin')
                     }
                 }
                 else{

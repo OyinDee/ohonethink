@@ -49,8 +49,8 @@ export default function Homepage() {
                     else if(response.data===0){
                         navigate('/thinkers/home') 
                     }    
-                    else{
-                        navigate('/admin')                 
+                    else if(response.data===11){
+                        navigate('/onlyadmin')                 
                     }
                 })
             }
