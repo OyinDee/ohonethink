@@ -6,6 +6,8 @@ import {useDispatch} from 'react-redux'
 import {useNavigate} from "react-router-dom"
 import IdeaComponent from './IdeaComponent'
 import {changename} from '../actions/change'
+import Footer from '../components/Footer'
+
 
 export default function DevHome() {
     const [posts, setPosts]= useState([])
@@ -72,7 +74,8 @@ export default function DevHome() {
 
 
 </section>
-    </section>     
+    </section>   
+    <Footer/>  
         </>
     )
 }

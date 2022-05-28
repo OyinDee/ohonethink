@@ -3,6 +3,7 @@ import axios from 'axios'
 import IdeaComponent from './IdeaComponent'
 import AdminNav from './AdminNav'
 import AdminPost from './AdminPost'
+import Footer from '../components/Footer'
 export default function ToBeApproved() {
     const [ideas, setIdeas]= useState([])
     useEffect(() => {
@@ -49,6 +50,7 @@ export default function ToBeApproved() {
               </div>}/>
             </div>
           ))}
+          <Footer/>
         </>
     )
 }
