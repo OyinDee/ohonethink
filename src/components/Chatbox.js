@@ -1,7 +1,53 @@
-import React from 'react'
+import {useState,useEffect} from 'react'
 import '../App.css'
+import axios from 'axios'
 import Nav from './Nav2'
+import {useDispatch} from 'react-redux'
+import {useNavigate} from "react-router-dom"
+import {changename} from '../actions/change'
+
 export default function Chatbox() {
+  const token = localStorage.token;
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  const username= localStorage.username;
+  useEffect(() => {
+    axios.get('https://o1think.herokuapp.com/dashcheck', {
+        headers:{
+            'Authorization':`Bearer ${token}`,
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+        }
+    }
+).then((response)=>{
+    if(localStorage.token&&response.data.message==='verification successful'){
+        console.log(response)
+        localStorage.username=response.data.username                         
+        axios.post('https://o1think.herokuapp.com/getUserType', {username:response.data.username}).then((response)=>{
+            console.log(response.data)
+            if(response.data===1){
+                navigate('/chat') 
+            }
+            else if(response.data===0){
+                navigate('/chat') 
+            }
+            else{
+                navigate('/onlyadmin')                 
+            }
+        })
+    }
+    else{
+    console.log("it isnt")
+        navigate('/')
+    }
+}).catch((err)=>{
+    console.log(err)
+}).then(()=>{
+  const username=localStorage.username
+  axios.post('http://localhost:1111/chat', {username:username})
+})
+
+}, [username, dispatch, navigate, token])
     const a={borderTop: "4px solid #ffa900"}
     const b={backgroundColor:"#eee"}
     const c={width: "45px", height: "100%"}
