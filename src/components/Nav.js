@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Routes, Route, useNavigate , Router, Link} from "react-router-dom"
+import {Link,useNavigate} from 'react-router-dom'
 import Login from './Login'
 export default function Nav() {
     const opened={width:"250px"}
