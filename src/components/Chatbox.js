@@ -5,12 +5,14 @@ import Nav from './Nav2'
 import {useDispatch} from 'react-redux'
 import {useNavigate} from "react-router-dom"
 import {changename} from '../actions/change'
+import io from "socket.io-client";
 
 export default function Chatbox() {
   const token = localStorage.token;
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const username= localStorage.username;
+
   useEffect(() => {
     axios.get('https://o1think.herokuapp.com/dashcheck', {
         headers:{
@@ -44,7 +46,9 @@ export default function Chatbox() {
     console.log(err)
 }).then(()=>{
   const username=localStorage.username
-  axios.post('http://localhost:1111/chat', {username:username})
+  axios.post('http://localhost:1111/chat',{username:username}).then(()=>{
+
+  })
 })
 
 }, [username, dispatch, navigate, token])
