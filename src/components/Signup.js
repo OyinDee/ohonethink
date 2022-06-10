@@ -65,6 +65,10 @@ export default function Signup() {
                     setStylee("style1");                
                     setLoading(false)           
                 }
+                else if(response.data.message==="Email already exists."){
+                    setUserPart()            
+                    setLoading(false)           
+                }
             }
             else if(response.data.text==="yes"){
                 navigate('/login')    
