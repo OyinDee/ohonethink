@@ -87,8 +87,8 @@ export default function Homepage() {
         <>
 
             <Nav2/>
-            <section className="section colored">
-            <div className="container"> 
+    <section className="section colored">
+        <div className="container"> 
             {messageforyou}
             <div className="yourIdeaCont">
             <form action="" method="post">
