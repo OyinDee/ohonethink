@@ -115,7 +115,7 @@ export default function Homepage() {
       <div className="cardbox-comments">
           <span className="comment-avatar float-left">
               <a href=""><img className="rounded-circle" src={img} alt="..."/></a>
-          </span>
+          </span> 
           <div className="search">
               <input placeholder="Write a comment" type="text"/>
               <button><i className="fa fa-camera"></i></button>
