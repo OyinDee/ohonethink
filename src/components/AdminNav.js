@@ -16,6 +16,10 @@ const closeNav=()=> {
 const navtolog =()=>{
     closeNav()
 }
+const closeNavv=()=> {
+    setStyle(closed)
+    navigate('/chat')
+}
 const tryToLogout=()=>{
     const logoutt= window.confirm("You will be logged out!")
          if(logoutt){
@@ -39,7 +43,7 @@ const tryToLogout=()=>{
         <button className="openbtn" onClick={openNav}>&#9776; </button>                    
         <a className="openbtn"></a>
         <ul className="nav">
-        <li><a>Customer support</a></li>
+        <li><a onClick={()=>navigate('/chat')}>Customer support</a></li>
         <li><a>Posts History</a></li>
         <li><a>Feedbacks</a></li>
         <li><a>Add Admin</a></li>        
@@ -51,7 +55,7 @@ const tryToLogout=()=>{
                 <a className="closebtn" onClick={closeNav}>&times;</a>
     
                 <br/><br/>
-              <a onClick={closeNav}>Customer support</a>
+              <a onClick={closeNavv}>Customer support</a>
               <a onClick={closeNav}>Posts History</a>
               <a onClick={closeNav}>Feedbacks</a>
               <a onClick={closeNav}>Add Admin</a>              

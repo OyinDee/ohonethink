@@ -10,6 +10,10 @@ export default function DevNav() {
 const openNav=()=>{
     setStyle(opened)
 }
+const closeNavv=()=> {
+    setStyle(closed)
+    navigate('/chat')
+}
 const closeNav=()=> {
     setStyle(closed)
 }
@@ -41,7 +45,7 @@ const tryToLogout=()=>{
         <li><a>My Opened Projects</a></li>
         <li><a>Wish List</a></li>
         <li><a>Help From Others</a></li>
-        <li><a>Chats</a></li>        
+        <li><a onClick={()=>navigate('/chat')}>Chats</a></li>        
         <li><a>My Profile</a></li>
         <li><a onClick={tryToLogout}>Logout</a></li>
         
@@ -53,7 +57,7 @@ const tryToLogout=()=>{
               <a onClick={closeNav}>My Opened Projects</a>
               <a onClick={closeNav}>Wish List</a>
               <a onClick={closeNav}>Help From Others</a>
-              <a onClick={closeNav}>Chats</a>              
+              <a onClick={closeNavv}>Chats</a>              
               <a onClick={closeNav}>My Profile</a>
           <a onClick={tryToLogout}>Logout</a>                     
         </div>

@@ -1,0 +1,26 @@
+.allinnotfound{
+    margin: 0;
+        height: 100vh;
+        background-size: auto;
+        background-repeat: repeat;
+        width: 100vw;
+        opacity: 80%;
+        color: white;
+        text-align: center;
+        padding-top: 10%;
+        }
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('images/no.gif');
+}
+.firstText{
+    font-family: serif ;
+    font-size: 3rem;
+    color: white;
+
+}
+div{
+    margin: 0;
+    padding: 0;
+}
