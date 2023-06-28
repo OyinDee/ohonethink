@@ -1,18 +1,23 @@
 .allinnotfound{
     margin: 0;
-        height: 100vh;
+        height:  fit-content;
         background-size: auto;
         background-repeat: repeat;
         width: 100vw;
         opacity: 80%;
         color: white;
         text-align: center;
+        background-image: url('images/no.gif');
         padding-top: 10%;
         }
+        .cover{
+            background-image: url('images/no.gif');
+            height: 100vh;
+        }
+
 body{
     margin: 0;
     padding: 0;
-    background-image: url('images/no.gif');
 }
 .firstText{
     font-family: serif ;

@@ -46,7 +46,7 @@ const tryToLogout=()=>{
         <li><a>Wish List</a></li>
         <li><a>Help From Others</a></li>
         <li><a onClick={()=>navigate('/chat')}>Chats</a></li>        
-        <li><a>My Profile</a></li>
+        <li><a onClick={()=>navigate('/profile')}>My Profile</a></li>
         <li><a onClick={tryToLogout}>Logout</a></li>
         
         </ul>
@@ -57,8 +57,8 @@ const tryToLogout=()=>{
               <a onClick={closeNav}>My Opened Projects</a>
               <a onClick={closeNav}>Wish List</a>
               <a onClick={closeNav}>Help From Others</a>
-              <a onClick={closeNavv}>Chats</a>              
-              <a onClick={closeNav}>My Profile</a>
+              <a onClick={()=>navigate('/chat')}>Chats</a>              
+              <a onClick={()=>navigate('/profile')}>My Profile</a>
           <a onClick={tryToLogout}>Logout</a>                     
         </div>
         

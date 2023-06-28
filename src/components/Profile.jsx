@@ -2,6 +2,7 @@ import React from 'react'
 import '../profile.css'
 import imgg from '../images/jujutsukaisen.jpg'
 export default function Profile() {
+    
     return (
         <>
         <div className="container">

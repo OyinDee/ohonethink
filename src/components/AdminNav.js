@@ -47,7 +47,7 @@ const tryToLogout=()=>{
         <li><a>Posts History</a></li>
         <li><a>Feedbacks</a></li>
         <li><a>Add Admin</a></li>        
-        <li><a>My Profile</a></li>
+        <li><a onClick={()=>navigate('/profile')}>My Profile</a></li>
         <li><a onClick={tryToLogout}>Logout</a></li>
         
         </ul>
@@ -59,7 +59,7 @@ const tryToLogout=()=>{
               <a onClick={closeNav}>Posts History</a>
               <a onClick={closeNav}>Feedbacks</a>
               <a onClick={closeNav}>Add Admin</a>              
-              <a onClick={closeNav}>My Profile</a>
+              <a onClick={()=>navigate('/profile')}>My Profile</a>
           <a onClick={tryToLogout}>Logout</a>                     
         </div>
         

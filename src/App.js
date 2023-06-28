@@ -18,11 +18,11 @@ import Homepage from './components/Homepage'
 import TBA from './components/ToBeApproved'
 import DevHome from './components/DevHome';
 import socketClient from "socket.io-client";
-import Profile from './components/Profile';
+import Profile from './components/myProfile';
 import TheProfile from './components/EditProfile';
 import PageNotFound from './components/PageNotFound';
 function App() {
-  const endpoint = "https://o1think.herokuapp.com/";
+  const endpoint = "https://newsapp-dpv1.onrender.com/";
   const socket = useRef(socketClient(endpoint));
   useEffect(() => {
     axios.get('https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900', (response)=>{
