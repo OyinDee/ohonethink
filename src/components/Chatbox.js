@@ -46,7 +46,7 @@ export default function Chatbox({socket}) {
   const [newMessage, setNewMessage] = useState('')
 
   useEffect(() => {
-    axios.get('https://o1think.herokuapp.com/dashcheck', {
+    axios.get('https://newsapp-dpv1.onrender.com/dashcheck', {
       headers:{
         'Authorization':`Bearer ${token}`,
         'Content-Type':'application/json',
@@ -67,7 +67,7 @@ export default function Chatbox({socket}) {
 }).then(()=>{
 
   const username=localStorage.username
-  axios.post('https://o1think.herokuapp.com/chat',{username:username}).then(()=>{
+  axios.post('https://newsapp-dpv1.onrender.com/chat',{username:username}).then(()=>{
     
   })
 })

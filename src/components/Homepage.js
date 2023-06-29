@@ -64,6 +64,8 @@ export default function Homepage() {
         axios.get('https://newsapp-dpv1.onrender.com/userscheck').then((response)=>{
             setPosts(response.data)
         })
+    }).catch((err)=>{
+        console.log(err.message)
     })
 
     }, [username, dispatch, navigate, token])
